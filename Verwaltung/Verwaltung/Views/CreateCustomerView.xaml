@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="Verwaltung.Views.CreateCustomerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Verwaltung.Views"
+             mc:Ignorable="d"
+             Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Mitarbeiter Name" />
+        <TextBox Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Nachname}" />
+
+        <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Mitarbeiter Vorname" />
+        <TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Vorname}" />
+
+        <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Position" />
+        <TextBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Position}" />
+
+        <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Geburtstag" />
+        <TextBox Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Geburtstag}" />
+
+        <TextBlock Grid.Row="4" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Telefonnummer" />
+        <TextBox Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Telefonnummer}" />
+
+        <TextBlock Grid.Row="5" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Mobilenummer" />
+        <TextBox Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Mobilenummer}" />
+
+        <TextBlock Grid.Row="6" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="E-Mail" />
+        <TextBox Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" Text="{Binding EMail}" />
+
+        <TextBlock Grid.Row="7" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Bemerkungen" />
+        <TextBox Grid.Row="7" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Bemerkungen}" />
+
+        <TextBlock Grid.Row="8" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Erfassungsdatum" />
+        <TextBox Grid.Row="8" Grid.Column="1" IsEnabled="False" VerticalAlignment="Center" Text="{Binding Erfassungsdatum, StringFormat=dd.MM.yyyy HH:mm:ss}" />
+
+        <Button Grid.Row="9" Grid.Column="1" Content="Speichern" Command="{Binding CmdSpeichern}" />
+    </Grid>
+</UserControl>
