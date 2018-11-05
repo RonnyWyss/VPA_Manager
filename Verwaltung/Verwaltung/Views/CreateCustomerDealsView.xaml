@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="Verwaltung.Views.CreateCustomerDealsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Verwaltung.Views"
+             mc:Ignorable="d"
+             Height="600" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="20" />
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" Text="Offerte erfassen" />
+
+        <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Firmenname Kunde" />
+        <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding TypItems}" SelectedItem="{Binding SelectedTypItem}" />
+        <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Ansprechsperson" />
+        <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding TypItems}" SelectedItem="{Binding SelectedTypItem}" />
+        <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Projektname" />
+        <ComboBox Grid.Row="3" Grid.Column="1" ItemsSource="{Binding TypItems}" SelectedItem="{Binding SelectedTypItem}" />
+
+        <TextBlock Grid.Row="4" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Gültigkeit" />
+        <DatePicker Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" SelectedDate="{Binding ArbeitsDatum}" />
+
+        <TextBlock Grid.Row="5" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Erfassungsdatum / Version" />
+        <TextBox Grid.Row="5" Grid.Column="1" IsEnabled="False" Text="{Binding Erfassungsdatum, StringFormat=dd.MM.yyyy HH:mm:ss}" />
+
+        <TextBlock Grid.Row="6" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Preis" />
+        <TextBox Grid.Row="6" Grid.Column="1" IsEnabled="False" Text="{Binding Projektname}" />
+
+        <TextBlock Grid.Row="7" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Rabatt" />
+        <TextBox Grid.Row="7" Grid.Column="1" IsEnabled="False" Text="{Binding Rabatt}" />
+
+        <TextBlock Grid.Row="8" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Total" />
+        <TextBox Grid.Row="8" Grid.Column="1" IsEnabled="False" Text="{Binding Total}" />
+
+        <TextBlock Grid.Row="9" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Dauer" />
+        <TextBox Grid.Row="9" Grid.Column="1" IsEnabled="False" Text="{Binding Dauer}" />
+
+        <Button Grid.Row="10" Grid.Column="4" Content="Speichern / Hinzufügen" Command="{Binding CmdSpeichern}" />
+
+        <TextBlock Grid.Row="0" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Bearbeiter" />
+        <TextBox Grid.Row="0" Grid.Column="4" Text="{Binding Benutzer}" />
+
+        <TextBlock Grid.Row="1" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Hardware" />
+        <TextBox Grid.Row="1" Grid.Column="4" Text="{Binding Hardware}" />
+
+        <TextBlock Grid.Row="2" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Software" />
+        <TextBox Grid.Row="2" Grid.Column="4" Text="{Binding Software}" />
+
+        <TextBlock Grid.Row="3" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Zuschlag" />
+        <TextBox Grid.Row="3" Grid.Column="4" Text="{Binding Zuschlag}" />
+
+        <TextBlock Grid.Row="4" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Leistung" />
+        <TextBox Grid.Row="4" Grid.Column="4" Text="{Binding Leistung}" />
+    </Grid>
+</UserControl>

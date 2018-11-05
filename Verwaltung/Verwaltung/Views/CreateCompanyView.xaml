@@ -4,12 +4,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:Verwaltung.Views"
+             xmlns:viewModels="clr-namespace:Verwaltung.ViewModels"
              mc:Ignorable="d"
-             Height="450" Width="800">
+             Height="600" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150" />
             <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="50" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -22,27 +24,66 @@
             <RowDefinition Height="30" />
             <RowDefinition Height="30" />
             <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Firmenname Kunde" />
-        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Kundenname}" />
+        <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" Text="Kunde erfassen" />
 
-        <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Strasse" />
-        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Strasse}" />
+        <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Firmen ID (Max.5 Zeichen)" />
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding FirmenId}" />
 
-        <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Nr" />
-        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Hausnummer}" />
+        <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Firmenname Kunde" />
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Kundenname}" />
 
-        <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="PLZ" />
-        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Plz}" />
+        <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Strasse" />
+        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Strasse}" />
 
-        <TextBlock Grid.Row="4" Grid.Column="0" Text="Ort" />
-        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Ort}" />
+        <TextBlock Grid.Row="4" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Nr" />
+        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Hausnummer}" />
 
-        <TextBlock Grid.Row="5" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Erfassungsdatum" />
-        <TextBox Grid.Row="5" Grid.Column="1" IsEnabled="False" Text="{Binding Erfassungsdatum, StringFormat=dd.MM.yyyy HH:mm:ss}" />
+        <TextBlock Grid.Row="5" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="PLZ" />
+        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Plz}" />
 
-        <Button Grid.Row="6" Grid.Column="1" Content="Speichern" Command="{Binding CmdSpeichern}" />
+        <TextBlock Grid.Row="6" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Entfernung" />
+        <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Entfernung}" />
+
+        <TextBlock Grid.Row="7" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Ort" />
+        <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Ort}" />
+
+        <TextBlock Grid.Row="8" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Erfassungsdatum" />
+        <TextBox Grid.Row="8" Grid.Column="1" IsEnabled="False" Text="{Binding Erfassungsdatum, StringFormat=dd.MM.yyyy HH:mm:ss}" />
+
+        <Button Grid.Row="9" Grid.Column="1" Content="Speichern / Hinzufügen" Command="{Binding CmdSpeichern}" />
+
+        <TextBlock Grid.Row="10" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Mitarbeiter" />
+        <DataGrid Grid.Row="11" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="4" VerticalScrollBarVisibility="Visible" SelectedItem="{Binding SelectedDataFile}" ItemsSource="{Binding Customer }" Name="Kunden"/>
+
+        <DataGrid Grid.Row="14" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="4" VerticalScrollBarVisibility="Visible"/>
+
+        <ListBox Grid.Column="3" Grid.Row="1" Grid.RowSpan="9" x:Name="listbox">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="{Binding CustomerID}" />
+                        <TextBlock Text="{Binding CompanyName}" />
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding ContactName}" />
+                            <TextBlock Text=" (" />
+                            <TextBlock Text="{Binding ContactTitle}" />
+                            <TextBlock Text=")" />
+                        </StackPanel>
+                        <TextBlock Text="{Binding Phone}" />
+                        <TextBlock Text="{Binding Birthday, StringFormat=d, ConverterCulture=de-CH}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </UserControl>

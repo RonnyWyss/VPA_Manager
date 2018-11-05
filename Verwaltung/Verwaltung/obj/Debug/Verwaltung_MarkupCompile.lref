@@ -1,9 +1,21 @@
 ﻿
 
+FC:\C#\VPA Datenbank\Verwaltung\Verwaltung\Views\CreateCustomerDealsView.xaml;;
+FC:\C#\VPA Datenbank\Verwaltung\Verwaltung\Views\CreateCustomerProjektView.xaml;;
+FC:\C#\VPA Datenbank\Verwaltung\Verwaltung\Views\CreateCustomerRapportView.xaml;;
+FC:\C#\VPA Datenbank\Verwaltung\Verwaltung\Views\CreateCompanyView.xaml;;
 FC:\C#\VPA Datenbank\Verwaltung\Verwaltung\Views\CreateCustomerView.xaml;;
 FC:\C#\VPA Datenbank\Verwaltung\Verwaltung\Views\LoginView.xaml;;
 FC:\C#\VPA Datenbank\Verwaltung\Verwaltung\Views\MainView.xaml;;
-FC:\C#\VPA Datenbank\Verwaltung\Verwaltung\Views\CreateCustomerRapportView.xaml;;
 FC:\C#\VPA Datenbank\Verwaltung\Verwaltung\Views\TimePicker.xaml;;
-FC:\C#\VPA Datenbank\Verwaltung\Verwaltung\Views\CreateCompanyView.xaml;;
+FC:\C#\VPA Datenbank\Verwaltung\Verwaltung\Views\CreateCustomerContractView.xaml;;
+FC:\C#\VPA Datenbank\Verwaltung\Verwaltung\Views\CreateCustomerDeliveryView.xaml;;
+FC:\C#\VPA Datenbank\Verwaltung\Verwaltung\Views\CreateHardwareView.xaml;;
+FC:\C#\VPA Datenbank\Verwaltung\Verwaltung\Views\CreateInvoiceView.xaml;;
+FC:\C#\VPA Datenbank\Verwaltung\Verwaltung\Views\CreateManufacturerView.xaml;;
+FC:\C#\VPA Datenbank\Verwaltung\Verwaltung\Views\CreateOrderView.xaml;;
+FC:\C#\VPA Datenbank\Verwaltung\Verwaltung\Views\CreateServiceView.xaml;;
+FC:\C#\VPA Datenbank\Verwaltung\Verwaltung\Views\CreateSoftwareView.xaml;;
+FC:\C#\VPA Datenbank\Verwaltung\Verwaltung\Views\CreateSupplierView.xaml;;
+FC:\C#\VPA Datenbank\Verwaltung\Verwaltung\Views\CreateTicketView.xaml;;
 

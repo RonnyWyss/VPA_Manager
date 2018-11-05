@@ -5,13 +5,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:Verwaltung.Views"
              mc:Ignorable="d"
-             Height="450" Width="800">
+             Height="600" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150" />
             <ColumnDefinition Width="200" />
             <ColumnDefinition Width="50" />
             <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="20" />
             <ColumnDefinition Width="20" />
             <ColumnDefinition Width="20" />
             <ColumnDefinition Width="20" />
@@ -30,23 +32,29 @@
             <RowDefinition Height="50" />
             <RowDefinition Height="50" />
             <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Firmenname Kunde" />
-        <ComboBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding TypItems}" SelectedItem="{Binding SelectedTypItem}" />
-        <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Ansprechsperson" />
+        <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" Text="Rapport erfassen" />
+
+        <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Firmenname Kunde" />
         <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding TypItems}" SelectedItem="{Binding SelectedTypItem}" />
-        <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Projektname" />
+        <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Ansprechsperson" />
         <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding TypItems}" SelectedItem="{Binding SelectedTypItem}" />
+        <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Projektname" />
+        <ComboBox Grid.Row="3" Grid.Column="1" ItemsSource="{Binding TypItems}" SelectedItem="{Binding SelectedTypItem}" />
 
-        <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Arbeitstag" />
-        <DatePicker Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" SelectedDate="{Binding ArbeitsDatum}" />
+        <TextBlock Grid.Row="4" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Arbeitstag" />
+        <DatePicker Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" SelectedDate="{Binding ArbeitsDatum}" />
 
-        <TextBlock Grid.Row="4" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Anreisezeit" />
-        <local:TimePicker Grid.Row="4" Grid.Column="1" Hours="10" Minutes="10" Seconds="30" x:Name="TimePicker" />
-        <TextBlock Grid.Row="5" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Abreisezeit" />
-        <TextBlock Grid.Row="6" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Ausgeführte Arbeiten" />
-        <TextBox Grid.Row="6" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="8" />
+        <TextBlock Grid.Row="5" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Anreisezeit" />
+        <local:TimePicker Grid.Row="5" Grid.Column="1" Hours="10" Minutes="10" Seconds="30" x:Name="TimePicker" />
+
+        <TextBlock Grid.Row="6" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Abreisezeit" />
+
+        <TextBlock Grid.Row="7" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Ausgeführte Arbeiten" />
+        <TextBox Grid.Row="7" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="8" />
 
 
         <TextBlock Grid.Row="0" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Techniker" />
@@ -90,6 +98,6 @@
         <CheckBox Grid.Row="3" Grid.Column="7" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding IsDiesel}" />
         <CheckBox Grid.Row="3" Grid.Column="8" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding IsMitfahrer}" />
 
-        <Button Grid.Row="8" Grid.Column="1" Content="Rapport erfassen" Command="{Binding CmdRapportErfassen}" />
+        <Button Grid.Row="9" Grid.Column="1" Content="Rapport erfassen" Command="{Binding CmdRapportErfassen}" />
     </Grid>
 </UserControl>

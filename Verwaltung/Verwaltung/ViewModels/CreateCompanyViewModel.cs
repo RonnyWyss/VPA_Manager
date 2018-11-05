@@ -1,25 +1,46 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Controls;
 using Prism.Commands;
 using Prism.Mvvm;
+using Verwaltung.Services;
 
 namespace Verwaltung.ViewModels
 {
     public class CreateCompanyViewModel : BindableBase
     {
         private readonly Action _navigateBack;
+        private string _benutzer;
         private DateTime _erfassungsdatum;
         private string _hausnummer;
         private string _kundenname;
+        private DataGrid _mitarbeiter;
         private string _ort;
         private string _plz;
         private string _strasse;
+        private Company _company;
 
-        public CreateCompanyViewModel(Action navigateBack)
+        public CreateCompanyViewModel(string benutzername)
         {
-            _navigateBack = navigateBack;
+            Benutzer = benutzername;
             Erfassungsdatum = DateTime.Now;
             CmdSpeichern = new DelegateCommand(OnCmdSpeichern);
+            Company = new Company();
+            Company.GetDemoData();
+        }
+
+        public Company Company
+        {
+            get => _company;
+
+            set => SetProperty(ref _company, value);
+        }
+
+        public string Benutzer
+        {
+            get => _benutzer;
+
+            set => SetProperty(ref _benutzer, value);
         }
 
         public string Kundenname
@@ -58,6 +79,7 @@ namespace Verwaltung.ViewModels
 
             set => SetProperty(ref _erfassungsdatum, value);
         }
+
 
         public DelegateCommand CmdSpeichern { get; }
 

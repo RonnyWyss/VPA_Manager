@@ -1,5 +1,5 @@
-﻿using System;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
+using Verwaltung.Services;
 using Verwaltung.ViewModels;
 
 namespace Verwaltung.Views
@@ -9,10 +9,10 @@ namespace Verwaltung.Views
     /// </summary>
     public partial class CreateCompanyView : UserControl
     {
-        public CreateCompanyView(Action navigateBack)
+        public CreateCompanyView(string benutzername)
         {
             InitializeComponent();
-            DataContext = new CreateCompanyViewModel(navigateBack);
+            DataContext = new CreateCompanyViewModel(benutzername);
         }
     }
 }

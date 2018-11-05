@@ -8,6 +8,7 @@ namespace Verwaltung.ViewModels
     public class CreateCustomerViewModel : BindableBase
     {
         private readonly Action _navigateBack;
+        private string _benutzer;
         private DateTime _erfassungsdatum;
         private string _hausnummer;
         private string _kundenname;
@@ -15,11 +16,18 @@ namespace Verwaltung.ViewModels
         private string _plz;
         private string _strasse;
 
-        public CreateCustomerViewModel(Action navigateBack)
+        public CreateCustomerViewModel(string benutzername)
         {
-            _navigateBack = navigateBack;
+            Benutzer = benutzername;
             Erfassungsdatum = DateTime.Now;
             CmdSpeichern = new DelegateCommand(OnCmdSpeichern);
+        }
+
+        public string Benutzer
+        {
+            get => _benutzer;
+
+            set => SetProperty(ref _benutzer, value);
         }
 
         public string Kundenname

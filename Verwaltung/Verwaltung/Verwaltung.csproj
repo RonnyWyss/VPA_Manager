@@ -38,6 +38,9 @@
     <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.2.0.4\lib\net47\CommonServiceLocator.dll</HintPath>
     </Reference>
+    <Reference Include="Datasource">
+      <HintPath>..\Datasource.dll</HintPath>
+    </Reference>
     <Reference Include="Prism, Version=7.1.0.431, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
       <HintPath>..\packages\Prism.Core.7.1.0.431\lib\net45\Prism.dll</HintPath>
     </Reference>
@@ -68,13 +71,67 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Services\Company.cs" />
+    <Compile Include="Services\Customer.cs" />
     <Compile Include="ViewModels\CreateCompanyViewModel.cs" />
+    <Compile Include="ViewModels\CreateCustomerDealsViewModel.cs" />
+    <Compile Include="ViewModels\CreateCustomerProjektViewModel.cs" />
+    <Compile Include="ViewModels\CreateHardwareViewModel.cs" />
+    <Compile Include="ViewModels\CreateSoftwareViewModel.cs" />
     <Compile Include="Views\CreateCompanyView.xaml.cs">
       <DependentUpon>CreateCompanyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateCustomerContractView.xaml.cs">
+      <DependentUpon>CreateCustomerContractView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateCustomerDealsView.xaml.cs">
+      <DependentUpon>CreateCustomerDealsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateCustomerProjektView.xaml.cs">
+      <DependentUpon>CreateCustomerProjektView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateCustomerDeliveryView.xaml.cs">
+      <DependentUpon>CreateCustomerDeliveryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateHardwareView.xaml.cs">
+      <DependentUpon>CreateHardwareView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateInvoiceView.xaml.cs">
+      <DependentUpon>CreateInvoiceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateManufacturerView.xaml.cs">
+      <DependentUpon>CreateManufacturerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateOrderView.xaml.cs">
+      <DependentUpon>CreateOrderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateServiceView.xaml.cs">
+      <DependentUpon>CreateServiceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateSoftwareView.xaml.cs">
+      <DependentUpon>CreateSoftwareView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateSupplierView.xaml.cs">
+      <DependentUpon>CreateSupplierView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateTicketView.xaml.cs">
+      <DependentUpon>CreateTicketView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TimePicker.xaml.cs">
       <DependentUpon>TimePicker.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\CreateCustomerContractView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateCustomerDealsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateCustomerProjektView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CreateCustomerRapportView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -84,6 +141,42 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\CreateCustomerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateCustomerDeliveryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateHardwareView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateInvoiceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateManufacturerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateOrderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateServiceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateSoftwareView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateSupplierView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateTicketView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -176,6 +269,7 @@
     <Resource Include="Images\maps_64x64.png" />
     <Resource Include="Images\notes_64x64.png" />
     <Resource Include="Images\print_64x64.png" />
+    <Resource Include="Images\produktion_icon.png" />
     <Resource Include="Images\research_64x64.png" />
     <Resource Include="Images\save_64x64.png" />
     <Resource Include="Images\SystemConfiguration.png" />
@@ -203,6 +297,80 @@
   <ItemGroup>
     <Resource Include="Images\CarRepair %283%29.png" />
     <Resource Include="Images\production_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CustomersOrders.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Achtung_T.png" />
+    <Resource Include="Images\alarm.png" />
+    <Resource Include="Images\alert_64x64.png" />
+    <Resource Include="Images\Boxes.png" />
+    <Resource Include="Images\B_PDF_T.png" />
+    <Resource Include="Images\charts.png" />
+    <Resource Include="Images\Chronomètre.png" />
+    <Resource Include="Images\Corbeille pleine 1.ico" />
+    <Resource Include="Images\Corbeille vide 1.ico" />
+    <Resource Include="Images\delivery-clipart-on-time-delivery-8.png" />
+    <Resource Include="Images\delivery-truck_1f69a.png" />
+    <Resource Include="Images\dollar_64x64.png" />
+    <Resource Include="Images\emergency %283%29.png" />
+    <Resource Include="Images\first_aid_kit %283%29.png" />
+    <Resource Include="Images\Forklift_blank.png" />
+    <Resource Include="Images\Forklift_dw_blank.png" />
+    <Resource Include="Images\Forklift_dw_green.png" />
+    <Resource Include="Images\Forklift_dw_red.png" />
+    <Resource Include="Images\Forklift_green.png" />
+    <Resource Include="Images\Forklift_red.png" />
+    <Resource Include="Images\Forklift_up_blank.png" />
+    <Resource Include="Images\Forklift_up_green.png" />
+    <Resource Include="Images\Forklift_up_red.png" />
+    <Resource Include="Images\history.png" />
+    <Resource Include="Images\idea_64x64.png" />
+    <Resource Include="Images\master-card_64x64.png" />
+    <Resource Include="Images\money_64x64.png" />
+    <Resource Include="Images\piggy-bank_64x64.png" />
+    <Resource Include="Images\price_64x64.png" />
+    <Resource Include="Images\qr-code_64x64.png" />
+    <Resource Include="Images\RecycleBin_Empty.png" />
+    <Resource Include="Images\RecycleBin_Full.png" />
+    <Resource Include="Images\safe_64x64.png" />
+    <Resource Include="Images\security_64x64.png" />
+    <Resource Include="Images\shopping_64x64.png" />
+    <Resource Include="Images\store_64x64.png" />
+    <Resource Include="Images\support_64x64.png" />
+    <Resource Include="Images\time %284%29.png" />
+    <Resource Include="Images\timer.png" />
+    <Resource Include="Images\traffic_lights %282%29.png" />
+    <Resource Include="Images\traffic_lights.png" />
+    <Resource Include="Images\traffic_lights_green %282%29.png" />
+    <Resource Include="Images\traffic_lights_green.png" />
+    <Resource Include="Images\traffic_lights_red %282%29.png" />
+    <Resource Include="Images\traffic_lights_red.png" />
+    <Resource Include="Images\traffic_lights_yellow %282%29.png" />
+    <Resource Include="Images\traffic_lights_yellow.png" />
+    <Resource Include="Images\visa_64x64.png" />
+    <Resource Include="Images\Waage_V001.png" />
+    <Resource Include="Images\wallet_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\production-icon-18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Deals_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\construction_worker_256.png" />
+    <Resource Include="Images\create-ticket.png" />
+    <Resource Include="Images\remove-ticket1-.png" />
+    <Resource Include="Images\remove.png" />
+    <Resource Include="Images\ticket1-.png" />
+    <Resource Include="Images\ticket_add-512.png" />
+    <Resource Include="Images\ticket_twice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\briefcase_64x64.png" />
+    <Resource Include="Images\research_96x96.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

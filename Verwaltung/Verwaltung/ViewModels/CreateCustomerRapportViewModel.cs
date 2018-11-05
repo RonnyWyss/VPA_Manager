@@ -15,9 +15,9 @@ namespace Verwaltung.ViewModels
         private bool _isZug;
         private DateTime? _valutaDatum;
 
-        public CreateCustomerRapportViewModel(string benutzer)
+        public CreateCustomerRapportViewModel(string benutzername)
         {
-            Benutzer = benutzer;
+            Benutzer = benutzername;
         }
 
         public string Benutzer

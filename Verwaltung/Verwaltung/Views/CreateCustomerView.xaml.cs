@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 using Verwaltung.ViewModels;
 
 namespace Verwaltung.Views
@@ -9,10 +8,10 @@ namespace Verwaltung.Views
     /// </summary>
     public partial class CreateCustomerView : UserControl
     {
-        public CreateCustomerView(Action navigateBack)
+        public CreateCustomerView(string benutzername)
         {
             InitializeComponent();
-            DataContext = new CreateCustomerViewModel(navigateBack);
+            DataContext = new CreateCustomerViewModel(benutzername);
         }
     }
 }

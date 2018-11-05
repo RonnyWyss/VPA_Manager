@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\C#\VPA Datenbank\Verwaltung\Verwaltung\App.xaml
-6-605276886
+18206524975
 
-19-639971339
-18545918765
-Views\CreateCustomerRapportView.xaml;Views\CreateCompanyView.xaml;Views\CreateCustomerView.xaml;Views\LoginView.xaml;Views\MainView.xaml;Views\TimePicker.xaml;
+37460348730
+191204186704
+Views\CreateCustomerContractView.xaml;Views\CreateCustomerDealsView.xaml;Views\CreateCustomerProjektView.xaml;Views\CreateCustomerRapportView.xaml;Views\CreateCompanyView.xaml;Views\CreateCustomerView.xaml;Views\CreateCustomerDeliveryView.xaml;Views\CreateHardwareView.xaml;Views\CreateInvoiceView.xaml;Views\CreateManufacturerView.xaml;Views\CreateOrderView.xaml;Views\CreateServiceView.xaml;Views\CreateSoftwareView.xaml;Views\CreateSupplierView.xaml;Views\CreateTicketView.xaml;Views\LoginView.xaml;Views\MainView.xaml;Views\TimePicker.xaml;
 
-False
+True
 

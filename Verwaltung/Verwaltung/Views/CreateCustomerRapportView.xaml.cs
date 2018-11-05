@@ -8,10 +8,10 @@ namespace Verwaltung.Views
     /// </summary>
     public partial class CreateCustomerRapportView : UserControl
     {
-        public CreateCustomerRapportView(string benutzer)
+        public CreateCustomerRapportView(string benutzername)
         {
             InitializeComponent();
-            DataContext = new CreateCustomerRapportViewModel(benutzer);
+            DataContext = new CreateCustomerRapportViewModel(benutzername);
         }
     }
 }
